@@ -1,19 +1,40 @@
-print("pythin for beginners")
-temperature = int(input("temperature :"))
-if temperature > 30:
-    print("it's a hot day")
-elif temperature < 30: # (20, 30]
-    print("it's a cool day have fun")
-    print("be safe")
+def add(x, y):
+    return x + y
 
-name = input("what's your name?")
-print("Hello Mr/Mrs " + name)
-birth_year = int(input("enter your birth year"))
-age = 2023 - int(birth_year)
-print(age)
+def subtract(x, y):
+    return x - y
 
-print("X + Y = sum")
-first = int(input("X "))
-second = int(input("Y "))
-sum = first + second
-print("sum = " + str(sum))
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error"
+    return x / y
+
+# Function to run the calculator
+def main():
+    print("Select Equation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+
+    choice = input("Enter choice (1/2/3/4): ")
+
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == '1':
+        print(f"{num1} + {num2} = {add(num1, num2)}")
+    elif choice == '2':
+        print(f"{num1} - {num2} = {subtract(num1, num2)}")
+    elif choice == '3':
+        print(f"{num1} * {num2} = {multiply(num1, num2)}")
+    elif choice == '4':
+        print(f"{num1} / {num2} = {divide(num1, num2)}")
+    else:
+        print("Unknown Input")
+
+if __name__ == "__main__":
+    main()
